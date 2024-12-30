@@ -22,6 +22,9 @@ function Cardinput({props}) {
 
     return (
         <div >
+          <h1 className="flex justify-center m-2 p-2" >
+            Create your e-BusinessCards and perform CRUD operations with them
+          </h1>
          <input value={name} onChange={
            e => setname(e.target.value)
           } type='text' placeholder='enter name' style={{margin:"5px", padding: "5px"}} ></input>  <br></br>
