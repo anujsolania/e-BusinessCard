@@ -36,7 +36,7 @@ function Cardinput({props}) {
           </ul>
          
           <input value={Nthinterest} onChange={e => setNthinterest(e.target.value)} type="text" placeholder="Enter interest" style={{margin:"5px", padding: "5px"}} ></input>
-          <button onClick={addinterest} >Add interest</button>
+          <button onClick={addinterest} className="border-2 border-black p-1 rounded-md">ADD MORE</button>
           <br></br>
 
           <input value={url1} onChange={e => seturl1(e.target.value)} placeholder="enter linkedin url" style={{margin:"5px", padding: "5px"}} ></input>

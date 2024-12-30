@@ -79,12 +79,12 @@ function Allcards({props}) {
                                         
                                         <li key={index}>
                                             {item}
-                                            <button className="ml-4" onClick={
+                                            <button className="ml-4 p-1 border-2 border-black rounded-md text-sm" onClick={
                                                 () => {
                                                     setinterests2(interests2.filter((element, i) => i !== index))  //for displaying
                                                     setnewinterests(interests2.filter((element,i) => i !== index)) //for actually removing i.e updating
                                                 }
-                                            } >REMOVE </button>
+                                            }  >REMOVE </button>
                                         </li>   
                                     ))}
                                     </ul>
@@ -95,7 +95,7 @@ function Allcards({props}) {
                                             setnewinterests([...interests2,Nth2interest]) //for actually adding SoAsTo update
                                             setNth2interest("")
                                         }
-                                        } >ADD</button>
+                                        } className="border-2 border-black p-1 rounded-md text-sm">ADD</button>
                                     </> 
                                 }
     

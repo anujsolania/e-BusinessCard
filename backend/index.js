@@ -14,7 +14,7 @@ app.post("/cardinput",async (req,res) => {
     const {name,about,interests,url1,url2} = req.body
 
     try {
-        if (!name || !about) {
+        if ((!name)) {
             return res.json({mssg: "Not enough input"})
         }
         await Card.create({name,about,interests,url1,url2})
