@@ -14,27 +14,16 @@ app.post("/cardinput",async (req,res) => {
     const {name,about,interests,url1,url2} = req.body
 
     try {
-        const result = await Card.create({name,about,interests,url1,url2})
-        res.json({mssg: "Card created successfully"})
+        if (!name || !about) {
+            return res.json({mssg: "Not enough input"})
+        }
+        await Card.create({name,about,interests,url1,url2})
+        return res.json({mssg: "Card created successfully"})
     } catch (error) {
         res.json({mssg: "Unable to create the card",error})
     }
 })
 
-
-//MADE CARD
-app.get("/mycard",async (req,res) => {
-    const name = req.headers.authorization
-    console.log("from header: "+name)
-
-    try {
-        const result = await Card.findOne({name})
-        return res.json({CARDDATA: result,CARDID: result._id})
-
-    } catch (error) {
-        res.json({mssg: "Unable to get the card/cards from DB"})
-    }
-})
 
 //ALL CARDS
 app.get("/allcards",async (req,res) => {
