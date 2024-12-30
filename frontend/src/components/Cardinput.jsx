@@ -24,24 +24,24 @@ function Cardinput({props}) {
         <div >
          <input value={name} onChange={
            e => setname(e.target.value)
-          } type='text' placeholder='enter name'></input>  <br></br>
+          } type='text' placeholder='enter name' style={{margin:"5px", padding: "5px"}} ></input>  <br></br>
           <input value={about} onChange={
            e => setabout(e.target.value)
-          }type='text' placeholder='enter 1 line about'></input> <br></br>
+          }type='text' placeholder='enter 1 line about' style={{margin:"5px", padding: "5px"}} ></input> <br></br>
 
           <ul>
             {interests.map((item,index) => (
-              <li key={index}>{item}</li>
+              <li key={index} style={{margin:"5px", padding: "5px"}} >{item}</li>
             ))}
           </ul>
          
-          <input value={Nthinterest} onChange={e => setNthinterest(e.target.value)} type="text" placeholder="Enter interest" ></input>
+          <input value={Nthinterest} onChange={e => setNthinterest(e.target.value)} type="text" placeholder="Enter interest" style={{margin:"5px", padding: "5px"}} ></input>
           <button onClick={addinterest} >Add interest</button>
           <br></br>
 
-          <input value={url1} onChange={e => seturl1(e.target.value)} placeholder="enter linkedin url"></input>
+          <input value={url1} onChange={e => seturl1(e.target.value)} placeholder="enter linkedin url" style={{margin:"5px", padding: "5px"}} ></input>
           <br></br>
-          <input value={url2} onChange={e => seturl2(e.target.value)} placeholder="enter twitter url"></input>
+          <input value={url2} onChange={e => seturl2(e.target.value)} placeholder="enter twitter url" style={{margin:"5px", padding: "5px"}} ></input>
           <br></br>
 
           <button onClick={async () => {
@@ -52,7 +52,7 @@ function Cardinput({props}) {
             })
             alert(response.data.mssg)
             navigate("/mycard")
-          } } className="underline"> LESS GOO</button>
+          } } className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}}> SEND INPUTS</button>
           <br></br>
 
           <button onClick={async () => {
@@ -62,12 +62,12 @@ function Cardinput({props}) {
             } else {
               alert("First create ur card")
             }
-          }} className="underline" >GO TO MY CARD</button>
+          }} className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}} >GO TO MY CARD</button>
           <br></br>
 
           <button onClick={() => {
               navigate("/allcards")
-          }} className="underline" >SEE ALL CARDS</button>
+          }} className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}} >SEE ALL CARDS</button>
         </div>
     )
     
