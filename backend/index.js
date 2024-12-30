@@ -13,12 +13,13 @@ app.use(cors({
 app.post("/cardinput",async (req,res) => {
     const {name,about,interests,url1,url2} = req.body
 
+    if (!name || !about) {
+        return res.json({ mssg: "All fields are required" });
+    }
+
     try {
-        if ((!name)) {
-            return res.json({mssg: "Not enough input"})
-        }
         await Card.create({name,about,interests,url1,url2})
-        return res.json({mssg: "Card created successfully"})
+        return res.status(201).json({mssg: "Card created successfully"})
     } catch (error) {
         res.json({mssg: "Unable to create the card",error})
     }

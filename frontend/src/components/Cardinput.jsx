@@ -30,7 +30,7 @@ function Cardinput({props}) {
           }type='text' placeholder='enter 1 line about' style={{margin:"5px", padding: "5px"}} ></input> <br></br>
 
           <ul>
-            {interests.map((item,index) => (
+            {interests && interests.map((item,index) => (
               <li key={index} style={{margin:"5px", padding: "5px"}} >{item}</li>
             ))}
           </ul>
@@ -51,7 +51,11 @@ function Cardinput({props}) {
               }
             })
             alert(response.data.mssg)
-            navigate("/allcards")
+            if (response.status === 201) {
+              navigate("/allcards");
+              setname(""),setabout(""),setinterests(""),seturl1(""),seturl2("")
+            }
+
           } } className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}}> SEND INPUTS</button>
           <br></br>
 

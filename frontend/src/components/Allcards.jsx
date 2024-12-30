@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 
 function Allcards({props}) {
-    const {interests} = props
+    const {setname,setabout,setinterests,seturl1,seturl2} = props
 
     const[interests2,setinterests2] = useState([]) 
     const[Nth2interest,setNth2interest] = useState("")
