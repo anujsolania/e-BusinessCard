@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import  axios  from "axios";
 
@@ -51,18 +51,8 @@ function Cardinput({props}) {
               }
             })
             alert(response.data.mssg)
-            navigate("/mycard")
+            navigate("/allcards")
           } } className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}}> SEND INPUTS</button>
-          <br></br>
-
-          <button onClick={async () => {
-            const NAME = localStorage.getItem("NAME")
-            if (NAME) {
-              navigate("/mycard")
-            } else {
-              alert("First create ur card")
-            }
-          }} className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}} >GO TO MY CARD</button>
           <br></br>
 
           <button onClick={() => {
