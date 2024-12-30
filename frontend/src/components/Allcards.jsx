@@ -47,7 +47,7 @@ function Allcards({props}) {
     return (
 
         <div>
-        <div className="grid grid-cols-3" >
+        <div className="flex flex-wrap items-center justify-center" >
             {carddata.map((card) => (
                         <div key={card._id}>
                             <div className="col-span-1 m-5 p-10 border rounded-lg font-serif bg-white" >
