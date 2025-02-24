@@ -111,6 +111,7 @@ function Allcards({props}) {
                                 }
                             </div>
                             </div>
+                            <div className="flex items-center " >
                             <button className="ml-6 border-2 border-black p-1 rounded-md" onClick={
                                 async () => {
                                     if (editcount!==card._id) {
@@ -128,10 +129,11 @@ function Allcards({props}) {
                                         seteditcount(0)
                                     }
                                 }
-                            } >{editcount!==card._id? "EDIT CARD" : "CONFIRM EDITS"}</button>
-                            <button className="ml-6 border-2 border-black p-1 rounded-md" onClick={
+                            } >{editcount!==card._id? <i class="ri-edit-2-fill"> EDIT CARD</i> : "CONFIRM EDITS"}</button>
+                            <i className="ri-delete-bin-5-line ml-6 border-2 border-black p-1 rounded-md" onClick={
                                 () => {deletefn(card._id)}
-                            } >DELETE CARD</button>
+                            }  > DELETE CARD</i>
+                        </div>
                         </div>
             ))}
            
