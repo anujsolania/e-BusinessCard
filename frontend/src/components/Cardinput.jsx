@@ -24,12 +24,12 @@ function Cardinput({props}) {
         <div className="flex flex-col justify-center items-center p-10 gap-10 w-screen" >
 
           <div >
-          <h1 className="font-medium text-xl" >
+          <h1 className="font-medium text-lg sm:text-xl " >
             Create your e-BusinessCards and perform CRUD operations with them
           </h1>
           </div>
 
-          <div className="flex flex-col items-center border border-black p-10 rounded-xl w-[70%] sm:w-[50%] gap-4" >
+          <div className="flex flex-col items-center border border-black p-10 rounded-xl gap-4 w-[70%] sm:w-[60%]" >
           <div className="flex flex-col w-full gap-2" >
          <input value={name} onChange={
            e => setname(e.target.value)
@@ -46,7 +46,7 @@ function Cardinput({props}) {
          
          <div className="flex items-center justify-center w-full" >
           <input value={Nthinterest} onChange={e => setNthinterest(e.target.value)} type="text" placeholder="Enter interest" className="m-2 p-2 rounded-md w-full" ></input>
-          <button onClick={addinterest} className="border-2 border-black rounded-md w-[20%] py-1 ">ADD</button>
+          <button onClick={addinterest} className="border-2 border-black rounded-md w-[20%] py-1 text-xs sm:text-sm">ADD</button>
          </div>
     
 
@@ -57,7 +57,7 @@ function Cardinput({props}) {
 
          </div>
 
-          <div className="flex gap-4" >
+          <div className="flex gap-2 text-xs sm:text-sm" >
 
           <button onClick={async () => {
             const response = await axios.post(`${import.meta.env.VITE_URL}/cardinput`,data,{
@@ -71,12 +71,12 @@ function Cardinput({props}) {
               setname(""),setabout(""),setinterests(""),seturl1(""),seturl2("")
             }
 
-          } } className="border-2 border-black p-1 rounded-md" > SEND INPUTS</button>
+          } } className="border-2 border-black p-1 rounded-md text-xs sm:text-sm" > SEND INPUTS</button>
           <br></br>
 
           <button onClick={() => {
               navigate("/allcards")
-          }} className="border-2 border-black p-1 rounded-md">SEE ALL CARDS</button>
+          }} className="border-2 border-black p-1 rounded-md text-xs sm:text-sm">SEE ALL CARDS</button>
 
           </div>
 

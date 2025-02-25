@@ -140,8 +140,8 @@ function Allcards({props}) {
           
         
         </div>
-        <div style={{margin:"25px", padding: "25px"}} className="flex justify-center" >
-        <Link to={"/"} className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}}>
+        <div className="flex justify-center m-[25px] p-[25px] " >
+        <Link to={"/"} className="ml-6 border-2 border-black rounded-md m-[5px] p-[5px]">
         ADD ANOTHER CARD</Link>
         </div>
 
