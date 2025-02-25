@@ -55,12 +55,12 @@ function Allcards({props}) {
 
                             <h1 className="text-4xl font-semibold">
                             {editcount!==card._id? card.name
-                             : <input value={newname} onChange={e => {setnewname(e.target.value)}} type='text' placeholder='enter name'></input> } 
+                             : <input value={newname} onChange={e => {setnewname(e.target.value)}} type='text' placeholder='enter name' className="border border-black rounded"></input> } 
                             </h1>
                             
                             <p className="my-6 text-2xl  text-gray-500 " >
                             {editcount!==card._id? card.about
-                             : <input value={newabout} onChange={e => {setnewabout(e.target.value)}} type='text' placeholder='enter name'></input> } 
+                             : <input value={newabout} onChange={e => {setnewabout(e.target.value)}} type='text' placeholder='enter name' className="border border-black rounded"></input> } 
                             </p>
                             
                 
@@ -87,7 +87,7 @@ function Allcards({props}) {
                                         </li>   
                                     ))}
                                     </ul>
-                                    <input value={Nth2interest} onChange={e => setNth2interest(e.target.value)} type="text" placeholder="Enter interest" ></input>
+                                    <input value={Nth2interest} onChange={e => setNth2interest(e.target.value)} type="text" placeholder="Enter interest" className="border border-black rounded"></input>
                                     <button onClick={
                                         () => {
                                             setinterests2([...interests2,Nth2interest]) //for dynamic display 
@@ -102,12 +102,12 @@ function Allcards({props}) {
                             
                             <div className="my-6 text-gray-200" >
                                 {
-                                    editcount!==card._id ? <a href={card.url1}><button className="bg-blue-700 border-2 border-blue-700 p-2 rounded-md">LinkedIn</button></a> : 
-                                    <input value={newurl1} onChange={e => setnewurl1(e.target.value)} type='text' placeholder='enter url1'></input>
+                                    editcount!==card._id ? <a href={card.url1}><button className="bg-blue-700 border-2 border-blue-700 p-2 rounded-md"><i class="ri-linkedin-fill"></i></button></a> : 
+                                    <input value={newurl1} onChange={e => setnewurl1(e.target.value)} type='text' placeholder='enter url1' className="border border-black rounded" ></input>
                                 }
                                 {
-                                    editcount!==card._id ? <a href={card.url2}><button className="ml-6 bg-blue-700 border-2 border-blue-700 p-2 rounded-md">Twitter</button></a> : 
-                                    <input value={newurl2} onChange={e => setnewurl2(e.target.value)} type='text' placeholder='enter url2'></input>
+                                    editcount!==card._id ? <a href={card.url2}><button className="ml-6 bg-blue-700 border-2 border-blue-700 p-2 rounded-md"><i class="ri-twitter-x-line"></i></button></a> : 
+                                    <input value={newurl2} onChange={e => setnewurl2(e.target.value)} type='text' placeholder='enter url2' className="border border-black rounded"></input>
                                 }
                             </div>
                             </div>
