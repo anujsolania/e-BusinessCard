@@ -21,31 +21,43 @@ function Cardinput({props}) {
 
 
     return (
-        <div >
-          <h1 className="flex justify-center m-2 p-2" >
+        <div className="flex flex-col justify-center items-center p-10 gap-10 w-screen" >
+
+          <div >
+          <h1 className="font-medium text-xl" >
             Create your e-BusinessCards and perform CRUD operations with them
           </h1>
+          </div>
+
+          <div className="flex flex-col items-center border border-black p-10 rounded-xl w-[70%] sm:w-[50%] gap-4" >
+          <div className="flex flex-col w-full gap-2" >
          <input value={name} onChange={
            e => setname(e.target.value)
-          } type='text' placeholder='enter name' style={{margin:"5px", padding: "5px"}} ></input>  <br></br>
+          } type='text' placeholder='Enter name' className="m-2 p-2 rounded-md" ></input> 
           <input value={about} onChange={
            e => setabout(e.target.value)
-          }type='text' placeholder='enter 1 line about' style={{margin:"5px", padding: "5px"}} ></input> <br></br>
+          }type='text' placeholder='Enter 1 line about' className="m-2 p-2 rounded-md" ></input>
 
-          <ul>
+
             {interests && interests.map((item,index) => (
-              <li key={index} style={{margin:"5px", padding: "5px"}} >{item}</li>
+              <p key={index} className="m-2 p-2 rounded-md" >{item}</p>
             ))}
-          </ul>
-         
-          <input value={Nthinterest} onChange={e => setNthinterest(e.target.value)} type="text" placeholder="Enter interest" style={{margin:"5px", padding: "5px"}} ></input>
-          <button onClick={addinterest} className="border-2 border-black p-1 rounded-md">ADD MORE</button>
-          <br></br>
 
-          <input value={url1} onChange={e => seturl1(e.target.value)} placeholder="enter linkedin url" style={{margin:"5px", padding: "5px"}} ></input>
-          <br></br>
-          <input value={url2} onChange={e => seturl2(e.target.value)} placeholder="enter twitter url" style={{margin:"5px", padding: "5px"}} ></input>
-          <br></br>
+         
+         <div className="flex items-center justify-center w-full" >
+          <input value={Nthinterest} onChange={e => setNthinterest(e.target.value)} type="text" placeholder="Enter interest" className="m-2 p-2 rounded-md w-full" ></input>
+          <button onClick={addinterest} className="border-2 border-black rounded-md w-[20%] py-1 ">ADD</button>
+         </div>
+    
+
+          <input value={url1} onChange={e => seturl1(e.target.value)} placeholder="Enter linkedin url" className="m-2 p-2 rounded-md" ></input>
+
+          <input value={url2} onChange={e => seturl2(e.target.value)} placeholder="Enter twitter url" className="m-2 p-2 rounded-md"></input>
+   
+
+         </div>
+
+          <div className="flex gap-4" >
 
           <button onClick={async () => {
             const response = await axios.post(`${import.meta.env.VITE_URL}/cardinput`,data,{
@@ -59,12 +71,17 @@ function Cardinput({props}) {
               setname(""),setabout(""),setinterests(""),seturl1(""),seturl2("")
             }
 
-          } } className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}}> SEND INPUTS</button>
+          } } className="border-2 border-black p-1 rounded-md" > SEND INPUTS</button>
           <br></br>
 
           <button onClick={() => {
               navigate("/allcards")
-          }} className="ml-6 border-2 border-black p-1 rounded-md" style={{margin:"5px", padding: "5px"}} >SEE ALL CARDS</button>
+          }} className="border-2 border-black p-1 rounded-md">SEE ALL CARDS</button>
+
+          </div>
+
+          </div>
+
         </div>
     )
     

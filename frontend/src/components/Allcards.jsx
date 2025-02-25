@@ -118,7 +118,6 @@ function Allcards({props}) {
                                         setnewname(card.name)
                                         setnewabout(card.about)
                                         setinterests2(card.interests) //for display
-                                        setnewinterests(card.interests) //for actual update
                                         setnewurl1(card.url1)
                                         setnewurl2(card.url2)
                                         
