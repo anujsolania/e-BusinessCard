@@ -102,11 +102,11 @@ function Allcards({props}) {
                             
                             <div className="my-6 text-gray-200" >
                                 {
-                                    editcount!==card._id ? <a href={card.url1}><button className="bg-blue-700 border-2 border-blue-700 p-2 rounded-md"><i class="ri-linkedin-fill"></i></button></a> : 
+                                    editcount!==card._id ? <a href={card.url1}><button className="bg-blue-700 border-2 border-blue-700 p-2 px-4 rounded-md"><i class="ri-linkedin-fill"></i></button></a> : 
                                     <input value={newurl1} onChange={e => setnewurl1(e.target.value)} type='text' placeholder='enter url1' className="border border-black rounded" ></input>
                                 }
                                 {
-                                    editcount!==card._id ? <a href={card.url2}><button className="ml-6 bg-blue-700 border-2 border-blue-700 p-2 rounded-md"><i class="ri-twitter-x-line"></i></button></a> : 
+                                    editcount!==card._id ? <a href={card.url2}><button className="ml-6 bg-blue-700 border-2 border-blue-700 p-2 px-4 rounded-md"><i class="ri-twitter-x-line"></i></button></a> : 
                                     <input value={newurl2} onChange={e => setnewurl2(e.target.value)} type='text' placeholder='enter url2' className="border border-black rounded"></input>
                                 }
                             </div>
@@ -118,6 +118,7 @@ function Allcards({props}) {
                                         setnewname(card.name)
                                         setnewabout(card.about)
                                         setinterests2(card.interests) //for display
+                                        setnewinterests(card.interests)
                                         setnewurl1(card.url1)
                                         setnewurl2(card.url2)
                                         

@@ -29,7 +29,7 @@ function Cardinput({props}) {
           </h1>
           </div>
 
-          <div className="flex flex-col items-center border border-black p-10 rounded-xl gap-4 w-[70%] sm:w-[60%]" >
+          <div className="flex flex-col items-center border border-black p-10 rounded-xl gap-4 w-[80%] sm:w-[60%] md:w-[50%]" >
           <div className="flex flex-col w-full gap-2" >
          <input value={name} onChange={
            e => setname(e.target.value)
